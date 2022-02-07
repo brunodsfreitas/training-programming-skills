@@ -33,3 +33,13 @@ clean-files-and-folders-by-time() {
     dateLog=`date +%Y/%m/%d__%H:%M:%S` # ATUALIZANDO DATA
     echo "|ENCERRANDO| |LIMPEZA DOWNLOADS USER| |$dateLog|" >> $logFile
 }
+
+check-root-user(){
+ROOT_UID=0     # SOMENTE USUARIOS COM UID 0 POSSUEM PRIVILEGIOS ROOT
+E_NOTROOT=87   # Non-root exit error.
+
+if [ "$UID" -ne "$ROOT_UID" ] then
+    echo "Must be root to run this script."
+    exit $E_NOTROOT
+fi
+}
