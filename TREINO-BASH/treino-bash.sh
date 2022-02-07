@@ -1,7 +1,10 @@
 #!/bin/bash
 
-
-#Este é um comentário
+#Isso é um comentário de 1 linha
+:' 
+    Isso é um comentário
+    de várias linhas
+'
 
 ### VARIAVEL
 site=www.bruno.com
@@ -90,7 +93,7 @@ if [ -d "/var/log" ]; then #verifica se a pasta existe
   echo "d /var/log = true"
 fi
 
-if [ -f "/var/log/lastlog" ]; then #verifica se é arquivo regular (documento, foto, programa, planilhas
+if [ -f "/var/log/lastlog" ]; then #verifica se é arquivo regular (documento, foto, programa, planilha)
   echo "f /var/log/lastlog = true"
 fi
 
@@ -155,4 +158,47 @@ i=1;
 while [ $i -le $num_dig ]; do
     echo "$i"
     ((i=$i+1))
+done
+
+###FUNCOES
+
+principal() {
+    echo "Escolha uma tarefa:"
+    echo "1) Exibir Data."
+    echo "2) Exibir Usuário."
+    read opc;
+    case $opc in
+        "1")exibir_data ;;
+        "2")exibir_usuario ;;
+    esac
+}
+
+exibir_data() {
+    data=$(date +"%T, %d/%m/%y, %A")
+    echo "Data: $data."
+}
+
+exibir_usuario() {
+    whoami
+}
+
+principal
+
+### ARGUMENTOS
+:' 
+    $0 --> Nome do script que foi executado
+    $1 ... $n --> argumentos passados por ordem
+    $# --> Número da quantidade de argumentos passados
+    $* --> Retorna todos argumentos de uma vez
+'
+
+if [ $# -lt 1 ]; then
+echo "Precisa fornecer pelo menos 1 argumento!"
+exit 1
+fi
+echo "Número de argumentos passados: $#"
+i=0
+for argumento in $* ; do
+    i=$(($i+1))
+    echo "Argumento $i passado: $argumento"
 done
