@@ -18,3 +18,18 @@ backup_rotation() {
     dateLog=`date +%Y-%m-%d_%H-%M` # ATUALIZANDO DATA
     echo "|ENCERRANDO| |BACKUP SIMPLES ARQUIVOS E BANCO| |$dateLog|" >> $logFile
 }
+
+clean-files-and-folders-by-time() {
+    logFile="/var/log/limpeza-pasta.log" # ARQUIVO DE LOG
+    diretorio="/home/user/downloads/*" # DIRETORIO A SER MONITORADO PARA LIMPEZA
+    quantidadeDiasAnteriores="+60" # QUANTIDADE DE DIAS QUE DEVERÁ MANTER
+    dateLog=`date +%Y/%m/%d__%H:%M:%S` # DATA E FORMATO DA DATA
+
+    echo "|INICIANDO| |LIMPEZA DOWNLOADS USER| |$dateLog|" >> $logFile
+
+    find $diretorio -type f -ctime $quantidadeDiasAnteriores | xargs rm -f # APAGA PRIMEIRAMENTE OS ARQUIVOS
+    find $diretorio -type d -ctime $quantidadeDiasAnteriores | xargs rmdir # APAGA AS PASTAS
+
+    dateLog=`date +%Y/%m/%d__%H:%M:%S` # ATUALIZANDO DATA
+    echo "|ENCERRANDO| |LIMPEZA DOWNLOADS USER| |$dateLog|" >> $logFile
+}
