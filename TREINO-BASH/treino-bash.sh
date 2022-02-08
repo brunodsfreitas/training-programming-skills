@@ -5,7 +5,6 @@
     Isso é um comentário
     de várias linhas
 '
-
 ### VARIAVEL
 site=www.bruno.com
 URL=      # DEFININDO VARIAVEL NULA
@@ -34,7 +33,6 @@ echo "$variavel" # EXIBE COM TODOS OS ESPACOS
 variavel=9950
 resultado=${variavel/99/01} # SUBSTITUI O VALOR 99 DA VARIAVEL PARA 01
 echo $resultado
-
 
 ### COMANDOS
 echo "Seu nome de usuário é:"
@@ -67,7 +65,6 @@ if [ $numero -gt 20 ]; then
   echo "Este número é maior que 20!"
 fi
 
-
 ### TABELA DE OPERADORES DE DEFINICAO
 :'
 =           --INICIALIZACAO/DEFINICAO DE VARIAVEL
@@ -90,14 +87,12 @@ VAR--       --POS-DECREMENTO
 /=          --DIVIDE PELA CONSTANTE
 %=          --MODULO PELA CONSTANTE
 '
-
 ### TABELA DE OPERADORES LOGICOS
 :'
 !           --NEGACAO
 &&          --E (AND)
 ||          --OU (OR)
 '
-
 ### TABELA DE OPERADORES DE ARQUIVOS
 :' 
 -e          --ARQUIVO EXISTE
@@ -138,7 +133,6 @@ f1 -ef f2   --ARQUIVO F1 E F2 POSSUEM O HARD LINK APONTADO PARA O MESMO ARQUIVO
 >       --MAIOR QUE (PARENTESES DUPLOS) : (("$a" > "$b"))
 >=      --MAIOR QUE OU IGUAL (PARENTESES DUPLOS) : (("$a" >= "$b"))
 '
-
 ### TABELA DE OPERADORES STRING
 :'
 =     --IGUAL : if [ "$a" = "$b" ]
@@ -149,7 +143,6 @@ f1 -ef f2   --ARQUIVO F1 E F2 POSSUEM O HARD LINK APONTADO PARA O MESMO ARQUIVO
 -z    --E NULL (0 DE LENGHT)
 -n    --NAO E NULL
 '
-
 ### TABELA DE OPERADORES LOGICOS
 :'
 -a    --E ( AND )
@@ -157,7 +150,6 @@ f1 -ef f2   --ARQUIVO F1 E F2 POSSUEM O HARD LINK APONTADO PARA O MESMO ARQUIVO
 &&    --E ( AND ) : [[ condition1 && condition2 ]]
 ||    --OU ( OR ) : [[ condition1 || condition2 ]]
 '
-
 if [ 1 -eq 1 ]; then #igual
   echo "1 eq 1 = true"
 fi
@@ -211,7 +203,6 @@ if [ -f "/var/log/lastlog" ]; then #verifica se é arquivo regular (documento, f
 fi
 
 ### ELSE
-
 if [ "OI" != "OI" ]; then #string diferente
     echo "OI != OI = true"
 else
@@ -322,8 +313,6 @@ echo ${texto:0:5} #RETORNA O TEXTO DO INDEX 0 AO 5
 texto="BrunoFreitas2022"
 echo `expr match "$texto" '\(................\)'`
 
-
-
 ### ARGUMENTOS
 :' 
     $0 --> Nome do script que foi executado
@@ -331,7 +320,6 @@ echo `expr match "$texto" '\(................\)'`
     $# --> Número da quantidade de argumentos passados
     $* --> Retorna todos argumentos de uma vez
 '
-
 if [ $# -lt 1 ]; then
 echo "Precisa fornecer pelo menos 1 argumento!"
 exit 1
