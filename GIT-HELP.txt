@@ -7,6 +7,8 @@ git checkout NOME-DA-BRANCH = "Muda para outra branch"
 git checkout -b "NOME-BRANCH-ORIGEM" = "Permite criar nova branch com base em outra"
 git merge "branch-a-receber-merge" = "Permite fazer o merge da branch ativa com outra"
 git pull = "Atualiza a branch atualmente ativa"
+git branch = "Exibe as branch disponíveis"
+git branch "NEW" = "Cria uma nova branch NEW"
 
 
 .gitignore = arquivo para definir pasta e arquivos que serão ignorados
