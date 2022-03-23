@@ -1,0 +1,21 @@
+git init = "Inicializa novo repositorio"
+git add . = "Adiciona os arquivos alterados atuais ao próximo commit"
+git status = "verifica status atual do repo"
+git commit -m "Mensagem" = "Cria novo commit com mensagem"
+git push = "envia as atualizações para nuvem na branch ativa"
+git checkout NOME-DA-BRANCH = "Muda para outra branch"
+git checkout -b "NOME-BRANCH-ORIGEM" = "Permite criar nova branch com base em outra"
+git merge "branch-a-receber-merge" = "Permite fazer o merge da branch ativa com outra"
+git pull = "Atualiza a branch atualmente ativa"
+
+
+.gitignore = arquivo para definir pasta e arquivos que serão ignorados
+
+# Antes de fazer um commit, será necessário definir essas variáveis
+user.email
+user.name
+
+Comando abaixo:
+
+git config --global user.email = "email@mail.com"
+git config --global user.name = "Nome Sobrenome"
