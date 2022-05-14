@@ -1,0 +1,27 @@
+UBUNTU 20.04 
+
+    [NETWORK CONFIGURATION]
+
+        Há um gerenciador de interface chamado cloudinit {ESTUDAR DEPOIS, serve para automação} https://www.youtube.com/watch?v=exeuvgPxd-E;
+        Precisa ser verificado, através do arquivo:
+        '/etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg'
+        Se o conteúdo conter 'network: {config: disabled}', ele não é gerenciado pelo Cloud Init;
+        Já que não é, o arquivo de configuração é o: '/etc/netplan/00-installer-config.yaml'
+        Abaixo está o exemplo para IP Fixo, deve ser respeitada a identação:
+        {
+        network:
+            version: 2
+            ethernets:
+                ens33:
+                    addresses: [192.168.20.160/24]
+                    gateway4: 192.168.20.2
+                    nameservers:
+                        addresses: [192.168.20.2, 8.8.8.8]
+        }
+
+        O comando para validar a sintaxe do arquivo é: 'netplan try' (Isso já altera o IP)
+        Para aplicar é o comando: 'netplan apply'
+
+    [SHOW ROUTE]
+        ip route
+        netstat -rn
