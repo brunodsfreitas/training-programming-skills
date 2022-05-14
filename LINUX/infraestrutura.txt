@@ -1,0 +1,23 @@
+[SERVIDORES]
+    REDE: 10.1.90.1 | 255.255.255.224 = /27
+
+    UBUNTU: 
+        IP: 10.1.90.2
+    DEBIAN: 
+        IP: 10.1.90.3
+    CENTOS:
+        IP: 10.1.90.4
+    OPENSUSE Tumbleweed:
+        IP: 10.1.90.5
+    OPENSUSE :
+        IP: 10.1.90.6
+    WS 2019:
+        IP: 10.1.90.7
+
+[ESTACOES]
+    REDE: 10.1.91.1 | 255.255.255.224 = /27
+
+    UBUNTU:
+        IP: 10.1.91.2
+    WINDOWS10:
+        IP: 10.1.91.3
