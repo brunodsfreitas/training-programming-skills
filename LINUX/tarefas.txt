@@ -1,8 +1,11 @@
--- RESIZE PARTITION VOLUMES IN DISTROS
--- CHANGE TIMEZONE OF DISTROS
--- CONFIGURE TIME UPDATE IN DISTROS
--- SET FIREWALL ON DISTROS
--- CONFIGURE SSH ON DISTROS, REMOVE ROOT ACCESS AND CREATE KEY TO USER
--- CONFIGURE NGINX ON DISTROS
--- CONFIGURE APACHE ON DISTROS
--- DOCUMENT IP CHANGE MODES ON DISTROS
+-- ampliar e diminuir volumes em todas distribuicoes linux
+-- alterar a configuracao de timezone e atualizacao automática de horário em todas distribuicoes linux
+-- definir regras em firewall em todas distribuicoes linux
+-- configurar SSH, sem permitir login root e só permitir login com chave em todas as distribuicoes linux
+-- configurar o nginx nas distribuicoes, 1 como webserver e outra como balanceador
+-- instalar apache e configurar 2 sites distintos no mesmo servidor
+-- instalar ssl nos 2 sites utilizados
+-- documentar alteração de rede dos servidores
+-- configurar ad no servidor windows
+-- configurar estacoes para ingressarem no AD 
+-- testar a possibilidade dos servidores linux terem os usuarios gerenciados pelo AD
