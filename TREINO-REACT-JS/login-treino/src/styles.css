@@ -75,6 +75,7 @@
     pointer-events: none;
     color: #adadad;
 }
+
 .focus-input::before {
     content: "";
     display: block;
@@ -113,15 +114,20 @@
     outline: 0;
 }
 
-.input:focus + .focus-input::after {
+.has-val + .focus-input::before {
+    width: 100%;
+}
+
+.has-val + .focus-input::after {
     top: -15px;
 }
 
-.container-login-form-btn {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 13px;
+.input:focus + .focus-input::before {
+    width: 100%;
+}
+
+.input:focus + .focus-input::after {
+    top: -15px;
 }
 
 .container-login-form-btn  {
@@ -152,6 +158,17 @@
     margin-top: 50px;
 }
 
-/* parei no tempo 41:36
-https://youtu.be/Bm50j2CqCXg?t=2496
-*/ 
+.txt1 {
+    font-size: 14px;
+    color:#adadad;
+    line-height: 1.5;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.txt2 {
+    font-size: 14px;
+    color:#6a7dfe;
+    line-height: 1.5;
+    text-decoration: none;
+}
